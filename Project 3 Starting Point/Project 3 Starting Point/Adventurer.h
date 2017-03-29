@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
+#include <vector>
 class Adventurer
 {
 private:
 	std::string _name;
-
+	
 public:
 	
 	
@@ -12,7 +13,7 @@ public:
 	~Adventurer();
 
 	std::string getName() const { return _name };
-	std::string virtual attack(); {return _name + "Punches with meaty fists!";}
+	std::string virtual attack() {return _name + "Punches!";}
 
 	//virtual means that derived classes can over ride it
 

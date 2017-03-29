@@ -7,7 +7,12 @@ Guild::Guild(std::string name) : _name(name)
 Guild::~Guild()
 {
 }
-
+void Guild::AddAdventurer(std::shared_ptr<Adventurer> newAdventurer)
+{
+	
+	_adventurers.push_back(newAdventurer);
+}
+//add adventurer then pick class?
 void Guild::AddMage(std::string name)
 {
 	auto magePtr = std::make_shared<Mage>(name);
@@ -35,14 +40,16 @@ void Guild::AddWarrior(std::string name)
 std::string Guild::GetInfo()
 {
 	std::string output = "Your guild has: \n";	
-
+	/*
 	output += _mages.size()		> 0 ? std::to_string(_mages.size()) + " mages\n" : "No mages!\n";
 	output += _rangers.size()	> 0 ? std::to_string(_rangers.size()) + " rangers\n" : "No rangers!\n";
-	output += _warriors.size()	> 0 ? std::to_string(_warriors.size()) + " warriors\n" : "No warriors!\n";
-	output += _paladins.size()	> 0 ? std::to_string(_paladins.size()) + " paladins\n" : "No paladins!\n";
+	output += _warriors.size()	> 0 ? std::to_string(_warriors.size()) + " warriors\n" : "No warriors!\n";    //later
+	output += _paladins.size()	> 0 ? std::to_string(_paladins.size()) + " paladins\n" : "No paladins!\n";*/
 	return output;
 }
 
+
+//simplify this
 std::string Guild::AttackWithMages()
 {
 	std::string output = "You command your mages to attack! \n";
@@ -86,10 +93,14 @@ std::string Guild::AttackWithWarriors()
 	}
 	return output;
 }
-
+//
 std::string Guild::AttackWithAllAdventurers()
 {
 	std::string output = "You command everyone to attack! \n";
+	//for (auto adventurer : _adventureres){
+	//output += adventurere->attack() + "\n";
+	//	}
+	//return output
 	output += AttackWithMages();
 	output += AttackWithPaladins();
 	output += AttackWithRangers();

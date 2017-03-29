@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-class Paladin
+class Paladin : public Adventurer
 {
 private:
 	std::string _name;

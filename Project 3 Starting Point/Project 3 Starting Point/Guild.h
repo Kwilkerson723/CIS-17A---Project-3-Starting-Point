@@ -6,14 +6,13 @@
 #include "Paladin.h"
 #include "Ranger.h"
 #include "Warrior.h"
+#include "Adventurer.h"
 
 class Guild
 {
 private:
-	std::vector<std::shared_ptr<Mage>> _mages;
-	std::vector<std::shared_ptr<Paladin>> _paladins;
-	std::vector<std::shared_ptr<Ranger>> _rangers;
-	std::vector<std::shared_ptr<Warrior>> _warriors;
+	std::vector<std::shared_ptr<Adventurer>> _adventurers;
+
 	
 	std::string _name;
 	int _gold = 0;
@@ -22,6 +21,7 @@ public:
 	~Guild();
 
 	std::string GetName() const { return _name; }
+	void AddAdventurer(std::shared_ptr<Adventurer> newAdventurer);
 	void AddMage(std::string name);
 	void AddPaladin(std::string name);
 	void AddRanger(std::string name);
