@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Adventurer.h"
 class Paladin : public Adventurer
 {
 private:

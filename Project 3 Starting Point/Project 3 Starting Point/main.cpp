@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include "Adventurer.h"
 #include "Guild.h"
 using namespace std;
 
@@ -66,7 +67,7 @@ void AddAdventurer(const shared_ptr<Guild> guild)
 	case 1: guild->AddAdventurer(make_shared<Mage>(name)); break;
 	case 2: guild->AddAdventurer(make_shared<Ranger>(name)); break;
 	case 3: guild->AddAdventurer(make_shared<Paladin>(name)); break;	
-	case 4: guild->AddAdventurer(make_shared<Warrior>(name)) break;
+	case 4: guild->AddAdventurer(make_shared<Warrior>(name)); break;
 	default: cout << "Invalid choice!"; break;
 	}
 	system("pause");
@@ -87,10 +88,10 @@ void Attack(const shared_ptr<Guild> guild)
 
 	switch (choice)
 	{
-	case 1: cout << guild->AttackWithMages() << endl; break;
-	case 2: cout << guild->AttackWithRangers() << endl; break;
-	case 3: cout << guild->AttackWithWarriors() << endl; break;
-	case 4: cout << guild->AttackWithPaladins() << endl; break;
+	//case 1: cout << guild->AttackWithMages() << endl; break;
+	//case 2: cout << guild->AttackWithRangers() << endl; break;			//restore these functions, they are in guild.cpp
+	//case 3: cout << guild->AttackWithWarriors() << endl; break;
+	//case 4: cout << guild->AttackWithPaladins() << endl; break;    
 	case 5: cout << guild->AttackWithAllAdventurers() << endl; break;
 	default: cout << "You run away like a coward" << endl; break;
 	}
