@@ -1,5 +1,5 @@
 #include "Guild.h"
-
+#include <algorithm>
 Guild::Guild(std::string name) : _name(name)
 {
 }
@@ -40,16 +40,24 @@ void Guild::AddWarrior(std::string name)
 std::string Guild::GetInfo()
 {
 	std::string output = "Your guild has: \n";	
-	/*
-	output += _mages.size()		> 0 ? std::to_string(_mages.size()) + " mages\n" : "No mages!\n";
-	output += _rangers.size()	> 0 ? std::to_string(_rangers.size()) + " rangers\n" : "No rangers!\n";
-	output += _warriors.size()	> 0 ? std::to_string(_warriors.size()) + " warriors\n" : "No warriors!\n";    //later
-	output += _paladins.size()	> 0 ? std::to_string(_paladins.size()) + " paladins\n" : "No paladins!\n";*/
+	int i = 0;
+	int warriorsCount = 0;
+	int mageCount = 0;
+	int paladinCount = 0;
+	int rangerCount = 0;
+	
+	int size = _adventurers.size();
+
+
+	//output += _adventurers.data()		> 0 ? std::to_string(_adventurers.size()) + " mages\n" : "No mages!\n";  //how to sort the mageptr from the others
+	//output += _ranger.size()	> 0 ? std::to_string(_adventurers.size()) + " rangers\n" : "No rangers!\n";			//need to figure out a sort function for _adventurers
+	//output += _warriors.size()	> 0 ? std::to_string(_warriors.size()) + " warriors\n" : "No warriors!\n";    //later
+	//output += _paladins.size()	> 0 ? std::to_string(_paladins.size()) + " paladins\n" : "No paladins!\n";
 	return output;
 }
 
 
-//simplify this   //still need to figure this out 4/10/2017
+//simplify this   //still need to figure this out 4/17/2017
 /*std::string Guild::AttackWithMages()
 {
 	std::string output = "You command your mages to attack! \n";
@@ -104,8 +112,8 @@ std::string Guild::AttackWithAllAdventurers()
 	/*output += AttackWithMages();
 	output += AttackWithPaladins();			//restore this later
 	output += AttackWithRangers();
-	output += AttackWithWarriors();
-	return output;*/
+	output += AttackWithWarriors();*/
+	return output;
 	
 	
 }
